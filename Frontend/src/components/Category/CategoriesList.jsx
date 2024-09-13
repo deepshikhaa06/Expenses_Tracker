@@ -1,6 +1,6 @@
 import React from "react";
 import { FaTrash, FaEdit } from "react-icons/fa";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Link,useNavigate } from "react-router-dom";
 import { deleteCategoryAPI, listCategoriesAPI } from "../../services/category/categoryService";
 import AlertMessage from "../Alert/AlertMessage"
@@ -13,7 +13,7 @@ const CategoriesList = () => {
         queryFn: listCategoriesAPI,
         queryKey: ["list-categories"],
     })
-    // console.log("query", query);
+    console.log("query", query);
     const navigate=useNavigate()
     //*MUTATION
     const mutation=useMutation({
@@ -72,10 +72,10 @@ const CategoriesList = () => {
           </li>
         ))}
       </ul>
+      
     </div>
   );
 };
-
 
 export default CategoriesList;
 
