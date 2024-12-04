@@ -1,4 +1,11 @@
 export const getUserFromStorage=()=>{
+    // const userInfo=JSON.parse(localStorage.getItem("userInfo") ||null)
+    // if(userInfo && userInfo.token){
+    // return userInfo.token  // RETURN THE ACTUAL JWT TOKEN
+    // }else{
+    //   console.log("No token found in local storage")  
+    //   return null // HANDLE THE CASE WHERE THERE NO TOKEN
+    // }
     const token=JSON.parse(localStorage.getItem("userInfo") ||null)
     return token?.token
 }
